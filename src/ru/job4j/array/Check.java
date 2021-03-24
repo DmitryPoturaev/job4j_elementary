@@ -5,8 +5,7 @@ public class Check {
         boolean result = true;
         for (boolean b : data) {
             if (data[0] != b) {
-                result = false;
-                break;
+                return false;
             }
         }
         return result;
