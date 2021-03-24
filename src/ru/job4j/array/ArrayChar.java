@@ -5,7 +5,9 @@ public class ArrayChar {
         /*префикс не может быть короче слова*/
         boolean result = word.length >= pref.length;
         for (int i = 0; result && i < pref.length; i++) {
-            result &= word[i] == pref[i];
+            if (word[i] != pref[i]) {
+                return false;
+            }
         }
         return result;
     }
