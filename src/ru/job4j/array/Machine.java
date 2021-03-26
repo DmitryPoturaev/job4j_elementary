@@ -13,9 +13,6 @@ public class Machine {
                 money -= coin;
                 rsl[size++] = coin;
             }
-            if (money == 0) {
-                break;
-            }
         }
         return Arrays.copyOf(rsl, size);
     }
