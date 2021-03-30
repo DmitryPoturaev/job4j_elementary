@@ -11,5 +11,4 @@ public class Min {
         }
         return min;
     }
-
 }
