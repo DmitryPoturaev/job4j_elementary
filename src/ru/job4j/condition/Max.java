@@ -8,14 +8,22 @@ public class Max {
         result = Max.max(3, 3);
         System.out.println("Max number: " + result);
 
-        result = Max.max(10, 4);
+        result = Max.max(5, 4, 6);
         System.out.println("Max number: " + result);
 
-        result = Max.max(-6, -7);
+        result = Max.max(6, 7, 8, 9);
         System.out.println("Max number: " + result);
     }
 
-    public static int max(int left, int right) {
-        return left > right ? left : right;
+    public static int max(int first, int second) {
+        return first > second ? first : second;
+    }
+
+    public static int max(int first, int second, int third) {
+        return max(max(first, second), third);
+    }
+
+    public static int max(int first, int second, int third, int fourth) {
+        return max(max(first, second, third), fourth);
     }
 }
