@@ -1,31 +1,40 @@
 package ru.job4j.condition;
 
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
+
 public class Point {
-    public static double distance(int x1, int y1, int x2, int y2) {
-        return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+
+    private int x;
+
+    private int y;
+
+    private int z;
+
+    public Point(int first, int second) {
+        this.x = first;
+        this.y = second;
     }
 
-    public static void main(String[] args) {
-        int x1 = 0;
-        int x2 = 2;
-        int y1 = 0;
-        int y2 = 0;
+    public Point(int x, int y, int z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
 
-        System.out.print("result (" + x1 + ", " + y1 + ") to (" + x2 + ", " + y2 + ") ");
-        System.out.println(Point.distance(x1, y1, x2, y2));
+    public double distance(Point that) {
+        return sqrt(pow(this.x - that.x, 2) + pow(this.y - that.y, 2));
+    }
 
-        x1 = 3;
-        x2 = 15;
-        y1 = 6;
-        y2 = 9;
-        System.out.print("result (" + x1 + ", " + y1 + ") to (" + x2 + ", " + y2 + ") ");
-        System.out.println(Point.distance(x1, y1, x2, y2));
+    public void info() {
+        System.out.println("Point[" + this.x + ", " + this.y + "]");
+    }
 
-        x1 = 367;
-        x2 = 35;
-        y1 = 87;
-        y2 = 238;
-        System.out.print("result (" + x1 + ", " + y1 + ") to (" + x2 + ", " + y2 + ") ");
-        System.out.println(Point.distance(x1, y1, x2, y2));
+    public double distance3d(Point that) {
+        return sqrt(pow(this.x - that.x, 2) + pow(this.y - that.y, 2) + pow(this.z - that.z, 2));
+    }
+
+    public void info3d() {
+        System.out.println("Point[" + this.x + ", " + this.y + ", " + this.z + "]");
     }
 }
